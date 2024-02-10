@@ -3,8 +3,8 @@
 pipeline {
 	agent any
 	environment {
-		dockerHome = tool dev-ayush-docker
-		mavenHome = tool dev-ayush
+		dockerHome = tool 'dev-ayush-docker'
+		mavenHome = tool 'dev-ayush'
 		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 	}
 	// agent { docker { image 'maven:latest'} }
