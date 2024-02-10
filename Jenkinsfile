@@ -2,11 +2,19 @@
 
 pipeline {
 	agent any
+	env {
+		dockerHome = tool dev-ayush-docker
+		mavenHome = tool dev-ayush
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	}
 	// agent { docker { image 'maven:latest'} }
+
+
 	stages {
 		stage('Build') {
 			steps {
-				// sh 'mvn --version'
+				sh 'mvn --version'
+				sh 'docker version'
 				echo "$path"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
 				echo "BUILD_ID - $env.BUILD_ID"
