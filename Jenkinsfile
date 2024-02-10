@@ -18,5 +18,16 @@ pipeline {
 				echo "Integration Test"
 			}
 		}
+	} 
+	post{
+		always {
+			echo "I Run Withoud Any condition"
+		}
+		success {
+			echo "I Run When Code Ran Succesfully"
+		}
+		faillure {
+			echo "I Run When Code Failed"
+		}
 	}
 }
