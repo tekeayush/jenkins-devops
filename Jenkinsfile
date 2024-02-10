@@ -2,7 +2,7 @@
 
 pipeline {
 	agent any
-	env {
+	environment {
 		dockerHome = tool dev-ayush-docker
 		mavenHome = tool dev-ayush
 		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
